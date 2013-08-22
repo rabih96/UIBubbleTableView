@@ -132,6 +132,12 @@
 
 - (IBAction)sayPressed:(id)sender
 {
+    if([textField.text isEqual:@""]){
+        
+        //Do Nothing
+        
+    }else{
+    
     bubbleTable.typingBubble = NSBubbleTypingTypeNobody;
 
     NSBubbleData *sayBubble = [NSBubbleData dataWithText:textField.text date:[NSDate dateWithTimeIntervalSinceNow:0] type:BubbleTypeMine];
@@ -140,6 +146,8 @@
     
     textField.text = @"";
     [textField resignFirstResponder];
+    
+    }
 }
 
 @end
